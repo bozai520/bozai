@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--  AngularJS的时间绑定-->
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../js/angular.min.js"></script>
+	</head>
+	<body>
+		
+		<div ng-app="myapp" ng-controller="mycontro">
+			<input type="text" name="name" ng-model="username"/>
+			<input type="button" ng-click="clean()" value="清空"/>
+			<div>
+				hello: {{username}}
+			</div>
+		</div>
+		<script type="text/javascript">
+			//声明模块
+			var myapp = angular.module("myapp",[]);
+			
+			//定义控制器
+			myapp.controller("mycontro",["$scope",function($scope){
+				$scope.username = "fghjkl";
+				
+				//时间触发
+				$scope.clean = function(){
+					$scope.username = "";
+				}
+			}]);
+			
+		</script>		
+	</body>
+</html>

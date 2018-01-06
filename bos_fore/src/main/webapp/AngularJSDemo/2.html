@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../js/angular.min.js"></script>
+	</head>
+
+	<body>
+		<!--   mvc的模态化-->
+		<div ng-app="myapp" ng-controller="mycontro">
+			<input type="text" name="name" id="name" ng-model="username" />
+			<div>
+				hello---->{{username}}
+			</div>
+		</div>
+		
+		
+		<script type="text/javascript">
+			
+			//申明模态框
+			var myapp = angular.module("myapp",[]);
+			
+			//定义控制器
+			myapp.controller("mycontro",["$scope",function($scope){
+				$scope.username ="大日本帝国万岁";
+			}]);
+		</script>
+
+	</body>
+
+</html>

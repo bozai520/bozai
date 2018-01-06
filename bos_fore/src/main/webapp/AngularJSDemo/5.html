@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<!--  路由的设置，通过设置来进行路由的加载方式-->
+		<meta charset="UTF-8">
+		
+		<!--导入需要的js文件-->
+		<script type="text/javascript" src="../js/angular.min.js"></script>
+		<!--  导入路由实现的所需要的js文件-->
+		<script type="text/javascript" src="../js/angular-route.min.js"></script>
+	</head>
+	<body ng-app="myapp">
+		
+		<div>
+			<h1>我是头部</h1>
+			<a href="#/JavaEE">JavaEE</a>
+			<a href="#/IOS">IOS</a>
+			<a href="#/C#">C#</a>
+		</div>	
+		<div ng-view>
+			
+			
+		</div>
+		<div>
+			<h1>我是脚步</h1>
+		</div>
+		
+	</body>
+	<script type="text/javascript">
+				//初始化模态框
+			var myapp = angular.module("myapp",["ngRoute"]);
+				
+			myapp.config(["$routeProvider", function($routeProvider){
+			$routeProvider
+			 .when('/JavaEE', {
+				 templateUrl: '5_1.html'
+			 }).when('/IOS', {
+				 templateUrl: '5_2.html'
+			 }).when('/C#', {
+				 templateUrl: '5_3.html'
+			 }).otherwise({
+			 	redirectTo: '/JavaEE'
+			 });
+		}]);
+		</script>
+</html>

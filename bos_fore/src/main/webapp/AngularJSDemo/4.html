@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<!--  使用angularJS来进行数据的遍历-->
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../js/angular.min.js"></script>
+	</head>
+
+	<body>
+
+		<div ng-app="myapp" ng-controller="mycontr">
+			<table border="" cellspacing="" cellpadding="">
+				<tr>
+					<th>序号</th>
+					<th>商品编号</th>
+					<th>商品名称</th>
+					<th>商品价格</th>
+				</tr>
+				<tr ng-repeat="pro in products">
+					<td>{{$index+1}}</td>
+					<td>{{pro.id}}</td>
+					<td>{{pro.name}}</td>
+					<td>{{pro.price}}</td>
+				</tr>
+			</table>
+		</div>
+		
+		<script type="text/javascript">
+			//初始化myapp模态框[]
+			var myapp = angular.module("myapp",[]);
+			
+			//定义控制器
+			myapp.controller("mycontr",["$scope",function($scope){
+				
+				$scope.products = [
+						{
+							id:10001,
+							name:"洗衣机",
+							price:10000
+						},{
+							id:10002,
+							name:"电视机",
+							price:20000
+						},{
+							id:10003,
+							name:"空调",
+							price:30000
+						}
+				];
+			}]);
+			
+		</script>
+	</body>
+
+</html>

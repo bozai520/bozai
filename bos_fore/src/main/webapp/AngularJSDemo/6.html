@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../js/angular.min.js"></script>
+	</head>
+	<body>
+		<div ng-app="myapp" ng-controller="mycon">
+			<button ng-bind="btnMsg"></button>
+		</div>
+		
+		<script type="text/javascript">
+				var myapp = angular.module("myapp",[]);
+				
+				myapp.controller("mycon",["$scope",function($scope){
+					$scope.btnMsg ="dhsaj";
+				}])
+		</script>
+	</body>
+</html>
